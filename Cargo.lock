@@ -1423,6 +1423,7 @@ name = "multibuilder"
 version = "0.0.0"
 dependencies = [
  "spirv-builder",
+ "spirv-std",
 ]
 
 [[package]]
@@ -2163,7 +2164,7 @@ name = "shared"
 version = "0.0.0"
 dependencies = [
  "bytemuck",
- "spirv-std",
+ "spirv-builder",
 ]
 
 [[package]]

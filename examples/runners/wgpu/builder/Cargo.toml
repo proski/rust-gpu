@@ -2,10 +2,6 @@
 name = "example-runner-wgpu-builder"
 version = "0.0.0"
 publish = false
-authors.workspace = true
-edition.workspace = true
-license.workspace = true
-repository.workspace = true
 
 # See rustc_codegen_spirv/Cargo.toml for details on these features
 [features]
@@ -14,4 +10,4 @@ use-installed-tools = ["spirv-builder/use-installed-tools"]
 use-compiled-tools = ["spirv-builder/use-compiled-tools"]
 
 [dependencies]
-spirv-builder.workspace = true
+spirv-builder.path = "../../../../crates/spirv-builder"

@@ -2,10 +2,6 @@
 name = "example-runner-wgpu"
 version = "0.0.0"
 publish = false
-authors.workspace = true
-edition.workspace = true
-license.workspace = true
-repository.workspace = true
 
 [lib]
 crate-type = ["lib", "cdylib"]
@@ -29,7 +25,7 @@ bytemuck = "1.6.3"
 
 [target.'cfg(not(any(target_os = "android", target_arch = "wasm32")))'.dependencies]
 env_logger = "0.10.0"
-spirv-builder = { workspace = true, features = ["watch"] }
+spirv-builder = { path = "../../../crates/spirv-builder", features = ["watch"] }
 
 [target.'cfg(target_os = "android")'.dependencies]
 android_logger = "0.13.0"
