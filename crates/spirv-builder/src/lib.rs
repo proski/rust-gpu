@@ -400,6 +400,13 @@ fn find_rustc_codegen_spirv() -> PathBuf {
         env::consts::DLL_PREFIX,
         env::consts::DLL_SUFFIX
     );
+    if let Some(path) = env::var_os("RUSTC_SPIRV_PATH") {
+        let mut path = PathBuf::from(path);
+        path.push(&filename);
+        if path.is_file() {
+            return path;
+        }
+    }
     for mut path in dylib_path() {
         path.push(&filename);
         if path.is_file() {

@@ -377,6 +377,7 @@ fn dylib_path_envvar() -> &'static str {
 }
 
 fn dylib_path() -> Vec<PathBuf> {
+    eprintln!("{:?}", env::var_os("FOO"));
     match env::var_os(dylib_path_envvar()) {
         Some(var) => env::split_paths(&var).collect(),
         None => Vec::new(),
